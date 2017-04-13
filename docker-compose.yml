@@ -1,0 +1,9 @@
+maintainence:
+  build: .
+  ports:
+    - 80:80
+    - 443:443
+  environment:
+    - OPG_NGINX_SERVER_NAMES=localhost 127.0.0.1
+  volumes:
+    - .:/app/public
