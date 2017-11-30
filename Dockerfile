@@ -1,6 +1,4 @@
-FROM registry.service.opg.digital/opguk/nginx:0.1.216
-
-RUN  apt-get update && apt-get autoclean && apt-get autoremove && rm -rf /var/lib/{apt,dpkg,cache,log}/ && rm -rf /tmp/* /var/tmp/*
+FROM registry.service.opg.digital/opguk/digi-deps-maintenance-base:nightly
 
 RUN rm /app/public/index.html
 ADD  . /app/public
