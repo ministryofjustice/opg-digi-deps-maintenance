@@ -1,12 +1,6 @@
-FROM registry.service.opg.digital/opguk/digi-deps-maintenance-base:nightly
+FROM nginx:alpine
 
-RUN rm /app/public/index.html
-ADD  . /app/public
-RUN  chown -R app /app
-
-WORKDIR /app/public
-USER app
-ENV  HOME /app
-
-USER root
-ENV  HOME /root
+ADD assets /usr/share/nginx/html/assets
+ADD css /usr/share/nginx/html/css
+ADD index.html /usr/share/nginx/html
+ADD robots.txt /usr/share/nginx/html
